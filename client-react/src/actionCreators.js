@@ -1,9 +1,5 @@
-import { SET_SEARCH_TERM, LOAD_PRODUCTS } from "./actions";
+import { LOAD_PRODUCTS } from "./actions";
 
-export function setSearchTerm(searchTerm) {
-  return { type: SET_SEARCH_TERM, payload: searchTerm };
-}
-
-export function addProducts(productsData) {
+export function loadProducts(productsData) {
   return { type: LOAD_PRODUCTS, payload: productsData };
 }

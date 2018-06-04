@@ -1,2 +1,1 @@
-export const SET_SEARCH_TERM = "SET_SEARCH_TERM";
 export const LOAD_PRODUCTS = "LOAD_PRODUCTS";

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { addProducts } from "./actionCreators";
+import { loadProducts } from "./actionCreators";
 const BASE_URL = "http://localhost:7777";
 
 export function fetchProductsFromDB() {
@@ -9,7 +9,7 @@ export function fetchProductsFromDB() {
       .get(`${BASE_URL}/get-products/1`)
       .then(response => {
         // console.log(response.data);
-        dispatch(addProducts(response.data));
+        dispatch(loadProducts(response.data));
       })
       .catch(error => {
         console.error("axios error", error); // eslint-disable-line no-console

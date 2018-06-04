@@ -4,9 +4,10 @@ import { loadProducts } from "./actionCreators";
 const BASE_URL = "http://localhost:7777";
 
 export function fetchProductsFromDB() {
+  const pageNo = 1; // page hard coded for now
   return dispatch => {
     axios
-      .get(`${BASE_URL}/get-products/1`)
+      .get(`${BASE_URL}/get-products/${pageNo}`)
       .then(response => {
         // console.log(response.data);
         dispatch(loadProducts(response.data));

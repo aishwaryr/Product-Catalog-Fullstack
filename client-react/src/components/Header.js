@@ -42,9 +42,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-{
-  /* <Link to="/product-form" className="btn btn-primary">
-  Add New Product
-            </Link> */
-}

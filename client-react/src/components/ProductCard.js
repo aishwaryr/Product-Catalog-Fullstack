@@ -6,6 +6,7 @@ import { formatDate } from "../helpers";
 
 class ProductCard extends Component {
   render() {
+    const { title, description, createdAt, price, quantity, picture, _id } = this.props.product;
     let detailsControl;
     if (this.props.showDetails) {
       detailsControl = (
@@ -14,7 +15,6 @@ class ProductCard extends Component {
         </Link>
       );
     }
-    const { title, description, createdAt, price, quantity, picture, _id } = this.props.product;
     return (
       <div className="card show-card product-card">
         <img className="card-img-top" src={picture} alt={`${title}`} />
@@ -22,7 +22,7 @@ class ProductCard extends Component {
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{description}</p>
           <p className="card-text">Created On: {formatDate(createdAt)}</p>
-          <p className="card-text">Price: {price}</p>
+          <p className="card-text">Price: ${price}</p>
           <p className="card-text">Quantity: {quantity}</p>
           {detailsControl}
           <br />

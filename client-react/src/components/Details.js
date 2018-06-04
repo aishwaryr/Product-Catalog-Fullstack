@@ -5,7 +5,6 @@ import Header from "./Header";
 import ProductCard from "./ProductCard";
 
 const Details = props => {
-  const { title, description, createdAt, price, quantity, picture, _id } = props.location.state;
   return (
     <div>
       <Header addProduct />

@@ -16,7 +16,12 @@ class Catalog extends Component {
   render() {
     console.log(this.props);
     if (this.props.products && this.props.products.length === 0) {
-      return <p>No Products Added!</p>;
+      return (
+        <React.Fragment>
+          <Header addProduct />
+          <h4 className="text-center"> No Products Added Yet! </h4>
+        </React.Fragment>
+      );
     }
     let catalogSection;
     if (this.props.products) {
@@ -24,13 +29,13 @@ class Catalog extends Component {
         <ProductCard key={product._id} product={product} showDetails />
       ));
     } else {
-      catalogSection = <p>Please wait</p>;
+      catalogSection = <p> Please wait... </p>;
     }
 
     return (
       <React.Fragment>
         <Header addProduct />
-        <div className="search">{catalogSection}</div>
+        <div className="search"> {catalogSection} </div>
       </React.Fragment>
     );
   }
@@ -38,7 +43,9 @@ class Catalog extends Component {
 
 const mapStateToProps = state => {
   const productsData = state.productsData ? state.productsData : {};
-  return { ...productsData };
+  return {
+    ...productsData
+  };
 };
 
 const mapDispatchToProps = dispatch => ({

@@ -28,7 +28,8 @@ class ProductForm extends Component {
     quantity: null,
     picture: "",
     productId: null,
-    createdAt: null
+    createdAt: null,
+    heading: "Add Product"
   };
 
   submit = data => {
@@ -84,7 +85,8 @@ class ProductForm extends Component {
           quantity,
           picture,
           productId: _id,
-          createdAt
+          createdAt,
+          heading: "Edit Product"
         };
       });
       console.log(this.state);
@@ -110,6 +112,7 @@ class ProductForm extends Component {
         <Container>
           <Row>
             <Col md={{ size: 6, offset: 3 }}>
+              <h4 className="text-center">{this.state.heading}</h4>
               <Formsy
                 ref={event => {
                   this.productForm = event;
@@ -117,7 +120,7 @@ class ProductForm extends Component {
                 onSubmit={this.submit}
                 onValid={this.enableButton}
                 onInvalid={this.disableButton}
-                className="add-garage-form"
+                className="add-garage-form text-center"
               >
                 <MyInput name="title" title="Product Title" type="text" required value={this.state.title} />
                 <MyInput

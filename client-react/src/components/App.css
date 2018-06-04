@@ -1,0 +1,27 @@
+.show-card {
+  display: inline-block;
+  width: 18rem;
+  margin: 8px;
+}
+
+.delete-confirm {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.delete-yes {
+  color: #f61d1d;
+}
+
+.delete-no {
+  color: #5353d3;
+}
+
+.product-card button {
+  margin-right: 8px;
+}
+
+.product-card a {
+  font-weight: 700;
+  text-decoration: underline;
+}
